@@ -2,7 +2,7 @@
 
 - **Layer:** Probability
 - **Depends on:** [04. Probability densities](04-probability-densities.md)
-- **Used by:** [07. Multivariate Gaussian distribution](07-multivariate-gaussian-distribution.md), [09. Typical set and high-dimensional geometry](09-typical-set-and-high-dimensional-geometry.md), [10. Monte Carlo integration](10-monte-carlo-integration.md), [13. Convergence and ergodicity of Markov chains](13-convergence-and-ergodicity.md), [26. Energy error and the modified (shadow) Hamiltonian](26-energy-error-and-shadow-hamiltonian.md)
+- **Used by:** [07. Multivariate Gaussian distribution](07-multivariate-gaussian-distribution.md), [08. Bayesian posterior as the target density](08-bayesian-posterior-as-target.md), [09. Typical set and high-dimensional geometry](09-typical-set-and-high-dimensional-geometry.md), [10. Monte Carlo integration](10-monte-carlo-integration.md), [13. Convergence and ergodicity of Markov chains](13-convergence-and-ergodicity.md), [15. Random-walk Metropolis and its scaling](15-random-walk-metropolis-and-its-scaling.md), [26. Energy error and the modified (shadow) Hamiltonian](26-energy-error-and-shadow-hamiltonian.md)
 
 ## Role in HMC
 
@@ -16,7 +16,7 @@ The purpose of MCMC is the numerical evaluation of expectations with respect to 
 - **Law of large numbers.** For independent, identically distributed $X_1,\dots,X_N$ with mean $\mu$, the sample mean $\bar X_N$ converges to $\mu$.
 - **Central limit theorem.** If in addition the variance $\sigma^2$ is finite, $\bar X_N$ is approximately distributed as $N(\mu,\sigma^2/N)$ for large $N$. The standard error is $\sigma/\sqrt N$.
 - **Growth of a random walk.** A sum of $n$ independent zero-mean steps, each of standard deviation $s$, has standard deviation $s\sqrt n$. The distance covered therefore grows as $\sqrt n$, whereas motion in a fixed direction covers a distance proportional to $n$.
-- **Jensen's inequality (tuning theory only).** For a convex function $g$, $\mathbb{E}[g(X)]\ge g(\mathbb{E}[X])$. Applied to $\mathbb{E}[e^{-\Delta}] = 1$, the inequality gives $\mathbb{E}[\Delta]\ge 0$ for the energy error $\Delta$ (block [31](31-step-size-tuning.md)).
+- **Jensen's inequality (tuning theory only).** For a convex function $g$, $\mathbb{E}[g(X)]\ge g(\mathbb{E}[X])$. Applied to $\mathbb{E}[e^{-\Delta}] = 1$, the inequality gives $\mathbb{E}[\Delta]\ge 0$ for the energy error $\Delta$ (block [26](26-energy-error-and-shadow-hamiltonian.md); the result is used in block [31](31-step-size-tuning.md)).
 
 ## Not required
 

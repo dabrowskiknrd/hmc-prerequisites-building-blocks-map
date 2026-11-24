@@ -1,7 +1,7 @@
 # 38. HMC-specific diagnostics: divergences, energy, tree depth
 
 - **Layer:** Diagnostics
-- **Depends on:** [18. MCMC output analysis](18-mcmc-diagnostics.md), [23. Canonical distribution and energy level sets](23-canonical-distribution.md), [26. Energy error and the modified (shadow) Hamiltonian](26-energy-error-and-shadow-hamiltonian.md), [36. The No-U-Turn Sampler (NUTS)](36-nuts-algorithm.md)
+- **Depends on:** [18. MCMC output analysis](18-mcmc-diagnostics.md), [23. Canonical distribution and energy level sets](23-canonical-distribution.md), [26. Energy error and the modified (shadow) Hamiltonian](26-energy-error-and-shadow-hamiltonian.md), [36. The No-U-Turn Sampler (NUTS)](36-nuts-algorithm.md), [37. Step-size adaptation by dual averaging](37-step-size-adaptation-by-dual-averaging.md)
 - **Used by:** [39. Hierarchical funnel and reparameterization](39-hierarchical-funnel-and-reparameterization.md)
 
 ## Role in HMC
@@ -35,4 +35,4 @@ HMC and NUTS produce, in addition to the draws, quantities that indicate whether
 - Betancourt and Girolami (2015): §III.A.1 (divergences in hierarchical models).
 - Hoffman and Gelman (2014): eq. 8 (energy-error threshold); Betancourt (2016), *Identifying the Optimal Integration Time in HMC*: §4.2.
 - Livingstone et al. (2019), *On the Geometric Ergodicity of HMC*: §7.4 (rapid gradient growth and divergences; vanishing gradients and maximum tree depth).
-- Martin (2024): Ch. 10, "Diagnosing the samples" (divergences in PyMC; energy plots are not covered there).
+- Martin (2024): §10.10, "Divergences" (divergences in PyMC); §10.6, "Diagnosing the samples" (energy plots are not covered there).

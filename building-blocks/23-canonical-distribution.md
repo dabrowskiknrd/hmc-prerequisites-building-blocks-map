@@ -1,8 +1,8 @@
 # 23. Canonical distribution and energy level sets
 
 - **Layer:** Statistical mechanics
-- **Depends on:** [04. Probability densities](04-probability-densities.md), [20. Hamiltonian mechanics](20-hamiltonian-mechanics.md), [21. Properties of Hamiltonian flow](21-properties-of-hamiltonian-flow.md)
-- **Used by:** [27. Phase-space target and momentum resampling](27-phase-space-target-and-momentum-resampling.md), [32. Integration time (trajectory length)](32-integration-time.md), [38. HMC-specific diagnostics](38-hmc-diagnostics.md)
+- **Depends on:** [04. Probability densities](04-probability-densities.md), [07. Multivariate Gaussian distribution](07-multivariate-gaussian-distribution.md), [20. Hamiltonian mechanics](20-hamiltonian-mechanics.md), [21. Properties of Hamiltonian flow](21-properties-of-hamiltonian-flow.md)
+- **Used by:** [26. Energy error and the modified (shadow) Hamiltonian](26-energy-error-and-shadow-hamiltonian.md), [27. Phase-space target and momentum resampling](27-phase-space-target-and-momentum-resampling.md), [28. Metropolis correction for a deterministic proposal](28-metropolis-correction-for-deterministic-proposals.md), [32. Integration time (trajectory length)](32-integration-time.md), [38. HMC-specific diagnostics](38-hmc-diagnostics.md)
 
 ## Role in HMC
 

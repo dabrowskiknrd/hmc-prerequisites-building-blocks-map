@@ -1,7 +1,7 @@
 # 28. Metropolis correction for a deterministic proposal
 
 - **Layer:** Hamiltonian Monte Carlo
-- **Depends on:** [05. Change of variables and Jacobian determinants](05-change-of-variables-and-jacobians.md), [14. Metropolis–Hastings algorithm](14-metropolis-hastings-algorithm.md), [25. Leapfrog (Störmer–Verlet) integrator](25-leapfrog-integrator.md), [26. Energy error and the modified (shadow) Hamiltonian](26-energy-error-and-shadow-hamiltonian.md)
+- **Depends on:** [05. Change of variables and Jacobian determinants](05-change-of-variables-and-jacobians.md), [14. Metropolis–Hastings algorithm](14-metropolis-hastings-algorithm.md), [23. Canonical distribution and energy level sets](23-canonical-distribution.md), [25. Leapfrog (Störmer–Verlet) integrator](25-leapfrog-integrator.md), [26. Energy error and the modified (shadow) Hamiltonian](26-energy-error-and-shadow-hamiltonian.md)
 - **Used by:** [29. The HMC algorithm and its invariance proof](29-hmc-algorithm-and-invariance.md)
 
 ## Role in HMC
@@ -18,7 +18,7 @@ A numerical trajectory does not conserve the Hamiltonian, so the leapfrog map do
   $$a(z) = \min\Big(1,\ \frac{\pi(G(z))}{\pi(z)}\,\lvert\det G'(z)\rvert\Big)$$
 
   yields a kernel that leaves $\pi$ invariant.
-- **Form in HMC.** The leapfrog map and the flip preserve volume, so $\lvert\det G'\rvert = 1$. With $\pi(z)\propto e^{-H(z)}$, the acceptance probability is $a(z) = \min\big(1,\ e^{-\Delta H}\big)$ with $\Delta H = H(G(z)) - H(z)$. Since $K(-p) = K(p)$, the flip does not change $H$, and $\Delta H$ equals the energy error of block [26](26-energy-error-and-shadow-hamiltonian.md).
+- **Form in HMC.** The leapfrog map and the flip preserve volume, so $\lvert\det G'\rvert = 1$. With the canonical density $\pi(z)\propto e^{-H(z)}$ (block [23](23-canonical-distribution.md)), the acceptance probability is $a(z) = \min\big(1,\ e^{-\Delta H}\big)$ with $\Delta H = H(G(z)) - H(z)$. Since $K(-p) = K(p)$, the flip does not change $H$, and $\Delta H$ equals the energy error of block [26](26-energy-error-and-shadow-hamiltonian.md).
 - **Sketch of the invariance argument.** Let $A$ be a small region of phase space and $B = G(A)$. The regions have equal volume, and $G$ maps $B$ back to $A$. The probability of a transition from $A$ to $B$ is $\pi(A)\min(1,\pi(B)/\pi(A)) = \min(\pi(A),\pi(B))$. This expression is symmetric in $A$ and $B$. Hence detailed balance holds with respect to $\pi$.
 - **Rejection and the flip.** On rejection the chain remains at $z$. In standard HMC the momentum is replaced at the start of the next iteration, so the final flip has no effect on the positions and is omitted in implementations.
 - **Division of roles.** Reversibility makes the proposal an involution. Volume preservation removes the Jacobian determinant. Approximate energy conservation makes the acceptance probability close to 1. The accuracy of the integrator affects the efficiency of HMC and does not affect its exactness.

@@ -1,8 +1,8 @@
 # 18. MCMC output analysis: warm-up, R-hat, effective sample size
 
 - **Layer:** MCMC algorithms
-- **Depends on:** [10. Monte Carlo integration](10-monte-carlo-integration.md), [13. Convergence and ergodicity of Markov chains](13-convergence-and-ergodicity.md)
-- **Used by:** [38. HMC-specific diagnostics](38-hmc-diagnostics.md)
+- **Depends on:** [09. Typical set and high-dimensional geometry](09-typical-set-and-high-dimensional-geometry.md), [10. Monte Carlo integration](10-monte-carlo-integration.md), [13. Convergence and ergodicity of Markov chains](13-convergence-and-ergodicity.md)
+- **Used by:** [37. Step-size adaptation by dual averaging](37-step-size-adaptation-by-dual-averaging.md), [38. HMC-specific diagnostics](38-hmc-diagnostics.md)
 
 ## Role in HMC
 
@@ -12,7 +12,7 @@ The convergence theorems are asymptotic, and their conditions cannot be verified
 
 - **Warm-up.** The initial segment of a chain is discarded. During this phase the chain moves from its starting point to the typical set, and the tuning parameters of the sampler are adapted. Adaptation is switched off at the end of warm-up.
 - **Multiple chains.** Several chains are run from dispersed starting points. Agreement between chains is evidence that each chain has reached the same distribution.
-- **Potential scale reduction $\hat R$.** For $m$ chains of length $n$, let $W$ be the mean of the within-chain variances and $B$ be $n$ times the variance of the chain means. With $\widehat{\operatorname{var}}^{+} = \frac{n-1}{n}W + \frac1n B$, the statistic is $\hat R = \sqrt{\widehat{\operatorname{var}}^{+}/W}$. It is computed on chains split into halves. Values close to 1 are required; the sources state thresholds of 1.1 (BDA3) and 1.01 (Murphy).
+- **Potential scale reduction $\hat R$.** For $m$ chains of length $n$, let $W$ be the mean of the within-chain variances and $B$ be $n$ times the variance of the chain means. With $\widehat{\operatorname{var}}^{+} = \frac{n-1}{n}W + \frac1n B$, the statistic is $\hat R = \sqrt{\widehat{\operatorname{var}}^{+}/W}$. It is computed on chains split into halves. Values close to 1 are required; the sources state thresholds of 1.1 (BDA3) and 1.01 (Vehtari et al., as reported by Murphy).
 - **Autocorrelation.** $\rho_t$ is the correlation between $f(q_n)$ and $f(q_{n+t})$ in a stationary chain.
 - **Effective sample size.** $\mathrm{ESS} = N\big/\big(1+2\sum_{t\ge1}\rho_t\big)$ for $N$ draws. It is the number of independent draws that would give the same estimator variance.
 - **Monte Carlo standard error.** $\mathrm{MCSE} = \sqrt{\operatorname{Var}_\pi[f]/\mathrm{ESS}}$. This expression replaces the $1/\sqrt N$ error of independent draws (block [10](10-monte-carlo-integration.md)).

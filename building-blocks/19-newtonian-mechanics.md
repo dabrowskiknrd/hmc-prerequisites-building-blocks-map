@@ -1,7 +1,7 @@
 # 19. Newtonian mechanics
 
 - **Layer:** Classical mechanics
-- **Depends on:** [01. Multivariable calculus](01-multivariable-calculus.md), [03. Ordinary differential equations and flows](03-ordinary-differential-equations-and-flows.md)
+- **Depends on:** [01. Multivariable calculus](01-multivariable-calculus.md), [02. Linear algebra](02-linear-algebra.md), [03. Ordinary differential equations and flows](03-ordinary-differential-equations-and-flows.md), [07. Multivariate Gaussian distribution](07-multivariate-gaussian-distribution.md)
 - **Used by:** [20. Hamiltonian mechanics](20-hamiltonian-mechanics.md)
 
 ## Role in HMC
@@ -17,7 +17,7 @@ HMC interprets the parameter vector as the position of a particle that moves wit
 - **Conservation of total energy.** Let $E = K + U$. By the chain rule, $\frac{dE}{dt} = \dot q^\top M\ddot q + \nabla U(q)\cdot\dot q$. By Newton's law, $M\ddot q = -\nabla U(q)$. Hence $\frac{dE}{dt} = 0$. Along a trajectory, kinetic and potential energy are exchanged while their sum is constant.
 - **First-order form.** Newton's law is equivalent to $\dot q = M^{-1}p$, $\dot p = -\nabla U(q)$. These are Hamilton's equations for $H = U + K$ (block [20](20-hamiltonian-mechanics.md)).
 - **Harmonic oscillator.** The potential $U(q) = \tfrac12 kq^2$ with mass $m$ gives oscillation at angular frequency $\omega = \sqrt{k/m}$. A one-dimensional Gaussian target with standard deviation $\sigma$ corresponds to $U(q) = q^2/(2\sigma^2)$; with unit mass, $\omega = 1/\sigma$.
-- **Qualitative behavior.** A particle with nonzero momentum does not move directly to the minimum of $U$. It passes the minimum and climbs the potential until its kinetic energy is exhausted. Reversing the velocity at any instant makes the particle retrace its path.
+- **Qualitative behavior.** A particle with nonzero momentum does not move directly to the minimum of $U$. In one dimension it passes the minimum and climbs the potential until its kinetic energy is exhausted; in several dimensions it can orbit the minimum without reaching it. Reversing the velocity at any instant makes the particle retrace its path.
 
 ## Not required
 

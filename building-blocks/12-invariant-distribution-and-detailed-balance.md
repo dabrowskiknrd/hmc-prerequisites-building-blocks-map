@@ -1,7 +1,7 @@
 # 12. Invariant distribution, detailed balance and reversibility
 
 - **Layer:** Markov chain theory
-- **Depends on:** [11. Markov chains and transition kernels](11-markov-chains-and-transition-kernels.md)
+- **Depends on:** [02. Linear algebra](02-linear-algebra.md), [11. Markov chains and transition kernels](11-markov-chains-and-transition-kernels.md)
 - **Used by:** [13. Convergence and ergodicity of Markov chains](13-convergence-and-ergodicity.md), [14. Metropolis–Hastings algorithm](14-metropolis-hastings-algorithm.md), [16. Gibbs sampling and auxiliary variables](16-gibbs-sampling-and-auxiliary-variables.md), [29. The HMC algorithm and its invariance proof](29-hmc-algorithm-and-invariance.md), [34. Sampling a state from a trajectory](34-sampling-a-state-from-a-trajectory.md)
 
 ## Role in HMC

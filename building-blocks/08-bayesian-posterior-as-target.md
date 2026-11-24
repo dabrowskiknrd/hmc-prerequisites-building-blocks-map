@@ -1,7 +1,7 @@
 # 08. Bayesian posterior as the target density
 
 - **Layer:** Probability
-- **Depends on:** [01. Multivariable calculus](01-multivariable-calculus.md), [04. Probability densities](04-probability-densities.md), [05. Change of variables and Jacobian determinants](05-change-of-variables-and-jacobians.md)
+- **Depends on:** [01. Multivariable calculus](01-multivariable-calculus.md), [04. Probability densities](04-probability-densities.md), [05. Change of variables and Jacobian determinants](05-change-of-variables-and-jacobians.md), [06. Expectation, variance and limit theorems](06-expectation-and-limit-theorems.md)
 - **Used by:** [10. Monte Carlo integration](10-monte-carlo-integration.md), [14. Metropolis–Hastings algorithm](14-metropolis-hastings-algorithm.md), [27. Phase-space target and momentum resampling](27-phase-space-target-and-momentum-resampling.md), [39. Hierarchical funnel and reparameterization](39-hierarchical-funnel-and-reparameterization.md)
 
 ## Role in HMC

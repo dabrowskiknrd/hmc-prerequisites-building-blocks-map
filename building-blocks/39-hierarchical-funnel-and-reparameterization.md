@@ -1,7 +1,7 @@
 # 39. Hierarchical funnel and reparameterization
 
 - **Layer:** Diagnostics
-- **Depends on:** [05. Change of variables and Jacobian determinants](05-change-of-variables-and-jacobians.md), [08. Bayesian posterior as the target density](08-bayesian-posterior-as-target.md), [30. Mass matrix (Euclidean metric)](30-mass-matrix.md), [38. HMC-specific diagnostics](38-hmc-diagnostics.md)
+- **Depends on:** [05. Change of variables and Jacobian determinants](05-change-of-variables-and-jacobians.md), [08. Bayesian posterior as the target density](08-bayesian-posterior-as-target.md), [25. Leapfrog (Störmer–Verlet) integrator](25-leapfrog-integrator.md), [30. Mass matrix (Euclidean metric)](30-mass-matrix.md), [38. HMC-specific diagnostics](38-hmc-diagnostics.md)
 - **Used by:** none (end point)
 
 ## Role in HMC
@@ -26,7 +26,7 @@ Hierarchical models are the most common setting in which HMC and NUTS report div
 
 ## Sources
 
-- Betancourt and Girolami (2015): §I, eqs. (1)–(2) and Figs. 2–3 (hierarchical model and funnel); §II (failure of constant rotations and rescalings); §III.A.1 (stability and divergences); §II.B and §IV, eqs. (3)–(4) (centered and non-centered parameterizations).
+- Betancourt and Girolami (2015): §I, eqs. (1)–(2) and Figs. 1–2 (hierarchical model and funnel); §I, last paragraph (failure of constant rotations and rescalings); §III.A.1 (stability and divergences); §II.B and §IV, eqs. (3)–(4) (centered and non-centered parameterizations).
 - Betancourt (2017): §6.2; Betancourt (2016), *Diagnosing Suboptimal Cotangent Disintegrations in HMC*: §4.3.
 - Neal (2011): §4.5; Thomas and Tu (2021): §5.2.3.
 - BDA3: §12.5 (HMC for a hierarchical model; transformation to $\log\tau$).

@@ -1,7 +1,7 @@
 # 16. Gibbs sampling and auxiliary variables
 
 - **Layer:** MCMC algorithms
-- **Depends on:** [04. Probability densities](04-probability-densities.md), [12. Invariant distribution, detailed balance and reversibility](12-invariant-distribution-and-detailed-balance.md), [14. Metropolis–Hastings algorithm](14-metropolis-hastings-algorithm.md)
+- **Depends on:** [04. Probability densities](04-probability-densities.md), [07. Multivariate Gaussian distribution](07-multivariate-gaussian-distribution.md), [12. Invariant distribution, detailed balance and reversibility](12-invariant-distribution-and-detailed-balance.md), [14. Metropolis–Hastings algorithm](14-metropolis-hastings-algorithm.md)
 - **Used by:** [17. Slice sampling](17-slice-sampling.md), [27. Phase-space target and momentum resampling](27-phase-space-target-and-momentum-resampling.md), [36. The No-U-Turn Sampler (NUTS)](36-nuts-algorithm.md)
 
 ## Role in HMC
@@ -27,6 +27,6 @@ HMC samples a joint distribution of positions and momenta in which the momenta a
 
 - BDA3: §11.1 (Gibbs sampler); §11.3 (Gibbs as a special case of Metropolis–Hastings); §12.1 (auxiliary variables).
 - MacKay (2003): §29.5, eqs. (29.35)–(29.37); §30.1 (momentum update as a Gibbs step).
-- Murphy (2025): §12.3.1, eqs. (12.20)–(12.22); §12.4 (auxiliary-variable MCMC).
+- Murphy (2025): §12.3.1 (basic idea); §12.3.2, eqs. (12.20)–(12.22) (Gibbs sampling as a special case of Metropolis–Hastings); §12.4 (auxiliary-variable MCMC).
 - Neal (2011): §3.2 (momentum drawn from its conditional distribution); §4.3 (combination of HMC with other updates).
 - Hoffman and Gelman (2014): §3.1.1 (resampling of momentum, slice variable and trajectory sets as a Gibbs update).

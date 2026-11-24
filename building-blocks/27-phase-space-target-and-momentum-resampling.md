@@ -14,7 +14,7 @@ This block is the construction that converts a sampling problem into a mechanica
 - **Idealized transition.** From the current position $q$: draw $p\sim N(0,M)$; apply the Hamiltonian flow, $(q',p') = \varphi_T(q,p)$, for an integration time $T$; return $q'$ and discard $p'$.
 - **Invariance of the idealized transition.** The momentum is independent of $q$ under the joint density, so the draw $p\sim N(0,M)$ is an exact Gibbs update and leaves $\pi(q,p)$ invariant. The flow $\varphi_T$ leaves the canonical distribution invariant (block [23](23-canonical-distribution.md)). Hence the composition leaves $\pi(q,p)$ invariant, and the positions have the invariant density $\pi(q)$.
 - **Necessity of both operations.** The flow is deterministic and conserves $H$, so it explores one energy level set only. Momentum resampling changes the kinetic energy and thereby the level set, and it does not move $q$. Neither operation alone is a complete sampler.
-- **Effect of the momentum.** The momentum preserves the direction of motion across integrator steps, so the distance traveled grows in proportion to the integration time. The force $-\nabla U(q)$ converts kinetic into potential energy and back, which confines the trajectory to states of comparable joint density.
+- **Effect of the momentum.** The momentum preserves the direction of motion over the integration time, so the distance traveled grows in proportion to the integration time until the trajectory first turns (block [32](32-integration-time.md)). The force $-\nabla U(q)$ converts kinetic into potential energy and back, which confines the trajectory to states of comparable joint density.
 - **Magnitude of the energy change.** The kinetic energy of a fresh momentum has mean $d/2$ and variance $d/2$ (block [07](07-multivariate-gaussian-distribution.md)). One resampling therefore changes the energy by an amount of order $\sqrt d$.
 - **Choice of kinetic energy.** The kinetic energy is a design choice. An admissible $K$ has a finite integral $\int e^{-K(p)}\,dp$ and satisfies $K(-p) = K(p)$. The Gaussian choice is standard, and its matrix $M$ is a tuning parameter (block [30](30-mass-matrix.md)).
 
@@ -30,4 +30,4 @@ This block is the construction that converts a sampling problem into a mechanica
 - Vishnoi (2021): Algorithm 1 and Theorem 5.1 (idealized HMC preserves the target).
 - Bou-Rabee and Sanz-Serna (2018): Algorithm 5.2 and Theorem 5.1 (exact HMC).
 - BDA3: §12.4; MacKay (2003): §30.1, eq. (30.3); Barbu and Zhu (2020): §9.5.1–9.5.2.
-- Betancourt and Stein (2011), *The Geometry of HMC*: eqs. (4)–(6) (admissible kinetic energies).
+- Betancourt and Stein (2011), *The Geometry of HMC*: section "Admissible Hamiltonians", unnumbered displays between eqs. (5) and (6) (admissible kinetic energies); eq. (6) (Gaussian kinetic energy).

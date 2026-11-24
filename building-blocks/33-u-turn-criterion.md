@@ -22,7 +22,7 @@ The U-turn criterion is the rule by which NUTS decides that a trajectory is long
 
   Each condition states that further integration at the corresponding end would reduce the distance between the ends.
 - **Cost.** The criterion requires two inner products and uses only the end states. No intermediate state must be stored for it.
-- **Mass matrix.** With a mass matrix $M$ the velocity is $M^{-1}p$. The generalized criterion replaces $p^\pm$ by $M^{-1}p^\pm$ and the displacement $q^+-q^-$ by the sum $\rho$ of the momenta over the states of the trajectory. For identity mass matrix the sum of the momenta is proportional to a discrete approximation of $q^+-q^-$, so the generalized criterion reduces to the two-sided form. Stan uses the generalized criterion.
+- **Mass matrix.** With a mass matrix $M$ the velocity is $M^{-1}p$. The generalized criterion replaces $p^\pm$ by $M^{-1}p^\pm$ and the displacement $q^+-q^-$ by the integral $\rho$ of the momentum along the trajectory. For the exact flow with a constant $M$, $\rho = M(q^+-q^-)$, so $M^{-1}p^\pm\cdot\rho = p^\pm\cdot(q^+-q^-)$; the generalized criterion is therefore the two-sided form with distance measured in the metric $M$, and it coincides with the two-sided form for identity mass matrix. Implementations compute $\rho$ as the sum of the momenta over the states of the trajectory, which agrees with $M(q^+-q^-)/\varepsilon$ only up to terms from the end states, so the two criteria give almost, but not exactly, the same decisions. Stan uses the generalized criterion.
 - **Insufficiency of the criterion alone.** The rule "integrate forward until the criterion is met and propose the final state" does not define a valid sampler. The trajectory started from the proposed state with reversed momentum does not in general stop at the original state, so the proposal is not reversible. Blocks [34](34-sampling-a-state-from-a-trajectory.md) and [35](35-trajectory-doubling-and-termination.md) give the construction that restores validity.
 - **Status.** The criterion is a heuristic for the integration time of block [32](32-integration-time.md). It is not derived as an optimum.
 
@@ -37,5 +37,5 @@ The U-turn criterion is the rule by which NUTS decides that a trajectory is long
 - Betancourt (2017): Appendix A.4.2, eq. (3) (criterion) and the generalized form with $M^{-1}p$ and $\rho$; Appendix A.5 (use in Stan).
 - Betancourt (2013), *Generalizing the No-U-Turn Sampler to Riemannian Manifolds*: section "The No U-Turn Sampler".
 - Betancourt (2016), *Identifying the Optimal Integration Time in HMC*: §3.3.
-- Bou-Rabee, Carpenter and Marsden (2026): eqs. (11) and (33). The sources print the two inequalities with different sign and conjunction conventions; the form above follows Hoffman and Gelman.
+- Bou-Rabee, Carpenter and Marsden (2026): eqs. (11) and (33) (one-sided conditions on the distance from the initial point); §3.5, unnumbered display (two-sided U-turn condition). The sources print the two inequalities with different sign and conjunction conventions; the form above follows Hoffman and Gelman.
 - BDA3: §12.4 (qualitative description).

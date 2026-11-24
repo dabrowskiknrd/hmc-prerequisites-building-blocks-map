@@ -1,7 +1,7 @@
 # 11. Markov chains and transition kernels
 
 - **Layer:** Markov chain theory
-- **Depends on:** [04. Probability densities](04-probability-densities.md)
+- **Depends on:** [02. Linear algebra](02-linear-algebra.md), [04. Probability densities](04-probability-densities.md)
 - **Used by:** [12. Invariant distribution, detailed balance and reversibility](12-invariant-distribution-and-detailed-balance.md)
 
 ## Role in HMC
@@ -16,7 +16,7 @@ Every MCMC method, including HMC and NUTS, is a rule that generates the next sta
 - **Kernels without a density.** A kernel may leave the state unchanged with positive probability, as in a rejection, or may move the state by a deterministic map. Such kernels are described by the probability $K(q,A)$ of moving from $q$ into a set $A$. Both cases occur in HMC.
 - **Kernel as algorithm.** A sampling algorithm is specified completely by the procedure that draws $q'$ given $q$. Analysis of the algorithm is analysis of the kernel defined by this procedure.
 - **Composition and mixture.** Applying a kernel $T_1$ and then a kernel $T_2$ defines a new kernel, the composition. Selecting one of several kernels at random at each step defines a mixture. One HMC iteration is a composition of two kernels (block [29](29-hmc-algorithm-and-invariance.md)).
-- **Dependence between states.** Consecutive states of a Markov chain are dependent. Averages over a chain therefore carry less information than averages over the same number of independent draws (block [18](18-mcmc-diagnostics.md)).
+- **Dependence between states.** Consecutive states of a Markov chain are dependent. Averages over a chain therefore carry, in general, less information than averages over the same number of independent draws (block [18](18-mcmc-diagnostics.md)).
 
 ## Not required
 

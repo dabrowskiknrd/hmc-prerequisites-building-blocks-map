@@ -2,11 +2,11 @@
 
 - **Layer:** Probability
 - **Depends on:** [06. Expectation, variance and limit theorems](06-expectation-and-limit-theorems.md), [07. Multivariate Gaussian distribution](07-multivariate-gaussian-distribution.md)
-- **Used by:** [15. Random-walk Metropolis and its scaling](15-random-walk-metropolis-and-its-scaling.md)
+- **Used by:** [15. Random-walk Metropolis and its scaling](15-random-walk-metropolis-and-its-scaling.md), [18. MCMC output analysis](18-mcmc-diagnostics.md)
 
 ## Role in HMC
 
-In high dimension the probability mass of a distribution is not located where the density is largest. It is located in a thin region called the typical set. This fact explains why grid integration and mode-based approximations fail, why random-walk proposals are rejected or short, and why HMC is designed to move along a surface on which the density is nearly constant.
+In high dimension the probability mass of a distribution is not located where the density is largest. It is located in a thin region called the typical set. This fact explains why grid integration and mode-based approximations fail, why random-walk proposals are rejected or short, and why HMC is designed to follow trajectories that move along the typical set and not toward the mode.
 
 ## Required knowledge
 
@@ -24,5 +24,5 @@ In high dimension the probability mass of a distribution is not located where th
 
 ## Sources
 
-- Betancourt (2017): §1.2 (cost of quadrature); §1.3 (growth of volume with dimension); §1.4 (typical set and concentration of measure); §3.1 (the gradient points toward the mode).
-- MacKay (2003): §29.1, eqs. (29.18)–(29.19) (number of uniform samples required to reach the typical set).
+- Betancourt (2017): §1.3 (growth of volume with dimension); §1.4 (typical set, concentration of measure and cost of quadrature); §3.1 (the gradient points toward the mode).
+- MacKay (2003): §29.1, eqs. (29.18)–(29.19) (number of uniform samples required to reach the typical set; the passage uses the entropy-based definition of the typical set).

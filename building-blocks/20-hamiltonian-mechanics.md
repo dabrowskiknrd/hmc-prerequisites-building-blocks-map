@@ -1,8 +1,8 @@
 # 20. Hamiltonian mechanics: phase space and Hamilton's equations
 
 - **Layer:** Classical mechanics
-- **Depends on:** [19. Newtonian mechanics](19-newtonian-mechanics.md)
-- **Used by:** [21. Properties of Hamiltonian flow](21-properties-of-hamiltonian-flow.md), [23. Canonical distribution and energy level sets](23-canonical-distribution.md)
+- **Depends on:** [01. Multivariable calculus](01-multivariable-calculus.md), [02. Linear algebra](02-linear-algebra.md), [03. Ordinary differential equations and flows](03-ordinary-differential-equations-and-flows.md), [19. Newtonian mechanics](19-newtonian-mechanics.md)
+- **Used by:** [21. Properties of Hamiltonian flow](21-properties-of-hamiltonian-flow.md), [22. Symplectic maps](22-symplectic-maps.md), [23. Canonical distribution and energy level sets](23-canonical-distribution.md), [24. Numerical integration of ODEs](24-numerical-integration-of-odes.md)
 
 ## Role in HMC
 
@@ -33,7 +33,7 @@ Hamiltonian mechanics expresses the motion of a system as first-order equations 
 
 - Neal (2011): §2.1, eqs. (2.1)–(2.8) (Hamilton's equations, separable form, matrix form).
 - Betancourt (2017): §3.2 (phase space, Hamiltonian, Hamilton's equations).
-- Bou-Rabee and Sanz-Serna (2018): §2.2, eqs. (2.8)–(2.10). The component form printed in §2.2 of the arXiv version contradicts eqs. (2.8)–(2.10), which are the correct forms.
+- Bou-Rabee and Sanz-Serna (2018): §2.2, eqs. (2.8)–(2.10). The component form printed in §2.2 of the arXiv version contradicts eqs. (2.8)–(2.10), which are the correct forms. The paper defines $J$ with the opposite sign and writes $\dot z = J^{-1}\nabla H$, which is the same equation.
 - Leimkuhler and Matthews (2015): §1.4 (phase space, Hamiltonian from the Lagrangian); eq. (2.1) ($\dot z = J\nabla H$).
 - Barbu and Zhu (2020), *Monte Carlo Methods*: §9.2, eqs. (9.1)–(9.6).
 - Hanada and Matsuura (2022): eq. (5.2) and Appendix C; Murphy (2025): eq. (12.65); MacKay (2003): eqs. (30.4)–(30.5).

@@ -15,7 +15,7 @@ The original No-U-Turn Sampler of Hoffman and Gelman is formulated with a slice 
 - **Conditional distributions.** Given $q$, the variable $u$ is uniform on $[0,\tilde\pi(q)]$. Given $u$, the variable $q$ is uniform on the slice $\lbrace q : \tilde\pi(q)\ge u\rbrace$.
 - **Slice sampler.** Alternating the two conditional updates is a Gibbs sampler for the joint density. More generally, the update of $q$ may be any kernel that leaves the uniform distribution on the slice invariant.
 - **Consequence used by NUTS.** Conditional on $u$, all admissible states are equally probable. A selection weighted by density is thereby replaced by a count of the states that satisfy $\tilde\pi(q)\ge u$ and a uniform choice among them.
-- **Form in NUTS.** With the joint density of position and momentum proportional to $\exp(-H(q,p))$ (block [27](27-phase-space-target-and-momentum-resampling.md)), the slice variable is drawn as $u\sim\mathrm{Uniform}\big[0,\exp(-H(q,p))\big]$. A state $(q',p')$ of the trajectory is admissible when $\exp(-H(q',p'))\ge u$.
+- **Form in NUTS (preview of block [34](34-sampling-a-state-from-a-trajectory.md)).** With the joint density of position and momentum proportional to $\exp(-H(q,p))$ (block [27](27-phase-space-target-and-momentum-resampling.md)), the slice variable is drawn as $u\sim\mathrm{Uniform}\big[0,\exp(-H(q,p))\big]$. A state $(q',p')$ of the trajectory is admissible when $\exp(-H(q',p'))\ge u$.
 
 ## Not required
 

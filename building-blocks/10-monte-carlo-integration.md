@@ -1,7 +1,7 @@
 # 10. Monte Carlo integration
 
 - **Layer:** Monte Carlo
-- **Depends on:** [06. Expectation, variance and limit theorems](06-expectation-and-limit-theorems.md), [08. Bayesian posterior as the target density](08-bayesian-posterior-as-target.md)
+- **Depends on:** [06. Expectation, variance and limit theorems](06-expectation-and-limit-theorems.md), [07. Multivariate Gaussian distribution](07-multivariate-gaussian-distribution.md), [08. Bayesian posterior as the target density](08-bayesian-posterior-as-target.md)
 - **Used by:** [13. Convergence and ergodicity of Markov chains](13-convergence-and-ergodicity.md), [18. MCMC output analysis](18-mcmc-diagnostics.md)
 
 ## Role in HMC
@@ -13,10 +13,10 @@ Monte Carlo integration replaces an integral over parameter space by an average 
 - **Estimator.** For independent draws $q_1,\dots,q_N$ from $\pi$, the estimator $\hat f_N = \frac1N\sum_{n=1}^N f(q_n)$ is unbiased for $\mathbb{E}_\pi[f]$.
 - **Error.** Since the draws are independent, $\operatorname{Var}[\hat f_N] = \operatorname{Var}_\pi[f]/N$. The standard error is therefore $\sqrt{\operatorname{Var}_\pi[f]/N}$, which decreases as $1/\sqrt N$ and does not depend on the dimension $d$. By the central limit theorem, $\hat f_N$ is approximately Gaussian around $\mathbb{E}_\pi[f]$.
 - **Remaining problem.** The dimension enters only through the difficulty of generating draws from $\pi$ when only $\tilde\pi$ can be evaluated.
-- **Inverse-distribution-function and grid sampling.** These methods require the normalized distribution function and are restricted to one or a few dimensions.
+- **Inverse-distribution-function and grid sampling.** The inverse-distribution-function method requires the normalized distribution function and its inverse. Grid sampling requires only the values of $\tilde\pi$ on a grid, which are normalized numerically, but the number of grid points grows exponentially with $d$. Both methods are restricted to one or a few dimensions.
 - **Rejection sampling.** A draw $q$ from a proposal density $g$ with $\tilde\pi\le c\,g$ is accepted with probability $\tilde\pi(q)/(c\,g(q))$. The acceptance rate is proportional to $1/c$. For a Gaussian target and a slightly wider Gaussian proposal, $c$ grows exponentially with $d$.
 - **Importance sampling.** Draws from $g$ receive weights $w_n = \tilde\pi(q_n)/g(q_n)$, and the estimator is $\sum_n w_n f(q_n)/\sum_n w_n$. In high dimension a few weights dominate the sum, and the estimator has very large variance.
-- **Transition to MCMC.** Markov chain Monte Carlo abandons independence. It generates each draw by a local modification of the preceding draw, which requires only ratios of $\tilde\pi$. The draws are correlated, so the error is larger than $\sqrt{\operatorname{Var}_\pi[f]/N}$; the correction is the effective sample size (block [18](18-mcmc-diagnostics.md)).
+- **Transition to MCMC.** Markov chain Monte Carlo abandons independence. It generates each draw by a local modification of the preceding draw, which requires only ratios of $\tilde\pi$. The draws are correlated; for the positively autocorrelated chains that are typical of random-walk samplers the error is larger than $\sqrt{\operatorname{Var}_\pi[f]/N}$, and the correction is the effective sample size (block [18](18-mcmc-diagnostics.md)).
 
 ## Not required
 
